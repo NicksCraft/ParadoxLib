@@ -29,7 +29,7 @@ jobs:
         run: |
           newVersion=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
           echo "New Version: $newVersion"
-          echo "name=$newVersion" >> "$GITHUB_OUTPUT"
+          echo "new-version=$newVersion" >> "$GITHUB_OUTPUT"
 
           # Modified From: https://github.com/Bullrich/generate-release-changelog
           tag=$(git tag | sort -r --version-sort | head -n1)
@@ -42,13 +42,13 @@ jobs:
           fi
 
           echo "Old Version: $tag"
-          echo "name=$tag" >> "$GITHUB_OUTPUT"
+          echo "old-version=$tag" >> "$GITHUB_OUTPUT"
 
           changelog="${changelog//'%'/'%25'}"
           changelog="${changelog//$'\n'/'%0A' - }"
           changelog=" - ${changelog//$'\r'/'%0D'}"
           echo "$changelog"
-          echo "name=$changelog" >> "$GITHUB_OUTPUT"
+          echo "changelog=$changelog" >> "$GITHUB_OUTPUT"
 
       - uses: madhead/semver-utils@latest
         id: comparison
