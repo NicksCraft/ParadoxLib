@@ -21,7 +21,7 @@ jobs:
         run: |
           newVersion=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
           echo New Version: $newVersion
-          echo ::set-output name=new-version::$newVersion
+          echo "name=new-version::$newVersion" >> $GITHUB_OUTPUT
 
           tag=$(git tag | sort -r --version-sort | head -n1)
 
@@ -30,7 +30,7 @@ jobs:
           fi
 
           echo Old Version: $tag
-          echo ::set-output name=old-version::$tag
+          echo "name=old-version::$tag" >> $GITHUB_OUTPUT
 
       - uses: madhead/semver-utils@1.4.3
         id: comparison
