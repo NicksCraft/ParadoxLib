@@ -1,8 +1,9 @@
 package com.ncoder.paradoxlib.blocks;
 
 import com.ncoder.paradoxlib.common.StackUtils;
+
+import io.github.thebusybiscuit.slimefun4.libraries.commons.lang.ArrayUtils;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.ItemUtils;
-import org.apache.commons.lang.ArrayUtils;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.HashMap;

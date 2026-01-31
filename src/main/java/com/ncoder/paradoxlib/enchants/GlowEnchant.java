@@ -27,25 +27,39 @@ public class GlowEnchant extends Enchantment {
     @Nonnull
     @Override
     @Deprecated
-    public String getName() { return "PARADOXLIB_GLOW"; }
+    public String getName() {
+        return "PARADOXLIB_GLOW";
+    }
 
     @Override
-    public int getMaxLevel() { return 1; }
+    public int getMaxLevel() {
+        return 1;
+    }
 
     @Override
-    public int getStartLevel() { return 1; }
+    public int getStartLevel() {
+        return 1;
+    }
 
     @Override
-    public EnchantmentTarget getItemTarget() { return EnchantmentTarget.ALL; }
+    public EnchantmentTarget getItemTarget() {
+        return EnchantmentTarget.ALL;
+    }
 
     @Override
-    public boolean isTreasure() { return false; }
+    public boolean isTreasure() {
+        return false;
+    }
 
     @Override
-    public boolean isCursed() { return false; }
+    public boolean isCursed() {
+        return false;
+    }
 
     @Override
-    public boolean conflictsWith(Enchantment other) { return false; }
+    public boolean conflictsWith(Enchantment other) {
+        return false;
+    }
 
     @Override
     public boolean canEnchantItem(ItemStack item) {

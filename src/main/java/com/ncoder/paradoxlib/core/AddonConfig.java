@@ -1,7 +1,7 @@
 package com.ncoder.paradoxlib.core;
 
-import org.apache.commons.lang.StringUtils;
 import org.bukkit.configuration.file.YamlConfiguration;
+import io.github.thebusybiscuit.slimefun4.libraries.commons.lang.StringUtils;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -55,8 +55,7 @@ public final class AddonConfig extends YamlConfiguration {
     public void save() {
         try {
             save(file);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -72,8 +71,7 @@ public final class AddonConfig extends YamlConfiguration {
         if (file.exists()) {
             try {
                 load(file);
-            }
-            catch (Throwable e) {
+            } catch (Throwable e) {
                 e.printStackTrace();
             }
         }
@@ -119,8 +117,7 @@ public final class AddonConfig extends YamlConfiguration {
             }
             return save.toString();
 
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return defaultSave;
         }
@@ -131,13 +128,11 @@ public final class AddonConfig extends YamlConfiguration {
 
         if (stream == null) {
             throw new IllegalStateException("No default config for " + name + "!");
-        }
-        else {
+        } else {
             try {
                 String def = readDefaults(stream);
                 defaults.loadFromString(def);
-            }
-            catch (Throwable e) {
+            } catch (Throwable e) {
                 e.printStackTrace();
             }
         }
@@ -169,8 +164,7 @@ public final class AddonConfig extends YamlConfiguration {
             if (line.contains(":")) {
                 // Its part of a path
                 pathBuilder.append(line);
-            }
-            else {
+            } else {
                 continue;
             }
 
@@ -178,8 +172,7 @@ public final class AddonConfig extends YamlConfiguration {
                 // Add the comment to the path and clear
                 comments.put(pathBuilder.build(), commentBuilder.toString());
                 commentBuilder = new StringBuilder("\n");
-            }
-            else if (pathBuilder.inMainSection()) {
+            } else if (pathBuilder.inMainSection()) {
                 // The main section should always have spaces between keys
                 comments.put(pathBuilder.build(), "\n");
             }

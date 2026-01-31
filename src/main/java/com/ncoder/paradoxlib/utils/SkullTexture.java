@@ -1,11 +1,10 @@
 package com.ncoder.paradoxlib.utils;
 
+import io.github.thebusybiscuit.slimefun4.libraries.commons.lang.Validate;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.common.CommonPatterns;
-
 import io.github.thebusybiscuit.slimefun4.libraries.dough.skins.PlayerSkin;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 
-import org.apache.commons.lang.Validate;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
@@ -30,15 +29,19 @@ public class SkullTexture {
 
             this.url = this.texture.substring(this.texture.indexOf("\"url\"") + 7, this.texture.lastIndexOf("\"}}}"));
 
-            if (this.url.contains("http://textures.minecraft.net/texture/")) this.hexadecimal = this.url.substring(38);
-            else this.hexadecimal = null;
+            if (this.url.contains("http://textures.minecraft.net/texture/"))
+                this.hexadecimal = this.url.substring(38);
+            else
+                this.hexadecimal = null;
         } else if (texture.startsWith("https://") || texture.startsWith("http://")) {
             this.url = texture;
 
             this.texture = "{\"textures\":{\"SKIN\":{\"url\":\"" + texture + "\"}}}";
 
-            if (texture.contains("http://textures.minecraft.net/texture/")) this.hexadecimal = texture.substring(38);
-            else this.hexadecimal = null;
+            if (texture.contains("http://textures.minecraft.net/texture/"))
+                this.hexadecimal = texture.substring(38);
+            else
+                this.hexadecimal = null;
 
             this.base64 = Base64.getEncoder().encodeToString(this.texture.getBytes(StandardCharsets.UTF_8));
         } else if (texture.startsWith("{\"textures\"")) {
@@ -46,8 +49,10 @@ public class SkullTexture {
 
             this.texture = texture;
 
-            if (this.url.contains("http://textures.minecraft.net/texture/")) this.hexadecimal = this.url.substring(38);
-            else this.hexadecimal = null;
+            if (this.url.contains("http://textures.minecraft.net/texture/"))
+                this.hexadecimal = this.url.substring(38);
+            else
+                this.hexadecimal = null;
 
             this.base64 = Base64.getEncoder().encodeToString(texture.getBytes(StandardCharsets.UTF_8));
         } else if (CommonPatterns.HEXADECIMAL.matcher(texture).matches()) {
@@ -67,13 +72,21 @@ public class SkullTexture {
         }
     }
 
-    public String getUrl() { return url; }
+    public String getUrl() {
+        return url;
+    }
 
-    public String getBase64() { return base64; }
+    public String getBase64() {
+        return base64;
+    }
 
-    public String getTexture() { return texture; }
+    public String getTexture() {
+        return texture;
+    }
 
-    public String getHexadecimal() { return hexadecimal; }
+    public String getHexadecimal() {
+        return hexadecimal;
+    }
 
     public static PlayerSkin getAsSkin(final SkullTexture texture) {
         return PlayerSkin.fromBase64(texture.getBase64());
