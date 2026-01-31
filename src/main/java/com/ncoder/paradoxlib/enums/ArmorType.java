@@ -14,14 +14,21 @@ public enum ArmorType {
     }
 
     public static ArmorType matchType(final ItemStack itemStack) {
-        if(CheckerUtil.isAirOrNull(itemStack)) return null;
+        if (CheckerUtil.isAirOrNull(itemStack))
+            return null;
         String type = itemStack.getType().name();
-        if(type.endsWith("_HELMET") || type.endsWith("_SKULL") || type.endsWith("_HEAD")) return HELMET;
-        if (type.endsWith("_CHESTPLATE") || type.equals("ELYTRA")) return CHESTPLATE;
-        if (type.endsWith("_LEGGINGS")) return LEGGINGS;
-        if (type.endsWith("_BOOTS")) return BOOTS;
+        if (type.endsWith("_HELMET") || type.endsWith("_SKULL") || type.endsWith("_HEAD"))
+            return HELMET;
+        if (type.endsWith("_CHESTPLATE") || type.equals("ELYTRA"))
+            return CHESTPLATE;
+        if (type.endsWith("_LEGGINGS"))
+            return LEGGINGS;
+        if (type.endsWith("_BOOTS"))
+            return BOOTS;
         return null;
     }
 
-    public int getSlot() { return slot; }
+    public int getSlot() {
+        return slot;
+    }
 }
