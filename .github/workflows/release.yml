@@ -56,11 +56,11 @@ jobs:
           version: ${{ steps.run.outputs.new-version }}
           compare-to: ${{ steps.run.outputs.old-version }}
 
-      - uses: actions/create-release@v1.1.4
+      - uses: softprops/action-gh-release@v2
         if: steps.comparison.outputs.comparison-result == '>'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.run.outputs.new-version }}
-          release_name: Release v${{ steps.run.outputs.new-version }}
+          name: Release v${{ steps.run.outputs.new-version }}
           body: ${{ steps.run.outputs.changelog }}
