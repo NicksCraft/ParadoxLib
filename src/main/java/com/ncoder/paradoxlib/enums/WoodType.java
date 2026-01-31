@@ -10,7 +10,9 @@ public enum WoodType {
     ACACIA(Material.ACACIA_LOG, Material.ACACIA_WOOD),
     DARK_OAK(Material.DARK_OAK_LOG, Material.DARK_OAK_WOOD),
     CRIMSON(Material.CRIMSON_STEM, Material.CRIMSON_HYPHAE),
-    WARPED(Material.WARPED_STEM, Material.WARPED_HYPHAE);
+    WARPED(Material.WARPED_STEM, Material.WARPED_HYPHAE),
+    MANGROVE(Material.MANGROVE_LOG, Material.MANGROVE_WOOD),
+    CHERRY(Material.CHERRY_LOG, Material.CHERRY_WOOD);
 
     private final Material log;
     private final Material wood;
@@ -26,17 +28,26 @@ public enum WoodType {
 
     public static WoodType matchType(final Material material) {
         for (WoodType type : WoodType.values()) {
-            if (material == type.log || material == type.wood) return type;
+            if (material == type.log || material == type.wood)
+                return type;
         }
         return null;
     }
 
-    public Material getLog() { return log; }
+    public Material getLog() {
+        return log;
+    }
 
-    public Material getWood() { return wood; }
+    public Material getWood() {
+        return wood;
+    }
 
-    public Material getStrippedLog() { return stripped_log; }
+    public Material getStrippedLog() {
+        return stripped_log;
+    }
 
-    public Material getStrippedWood() { return stripped_wood; }
+    public Material getStrippedWood() {
+        return stripped_wood;
+    }
 
 }
