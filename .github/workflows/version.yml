@@ -13,15 +13,15 @@ jobs:
     if: github.repository_owner == 'NicksCraft'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - id: run
         run: |
           newVersion=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-          echo New Version: $newVersion
-          echo "name=new-version::$newVersion" >> $GITHUB_OUTPUT
+          echo "New Version: $newVersion"
+          echo "new-version=$newVersion" >> "$GITHUB_OUTPUT"
 
           tag=$(git tag | sort -r --version-sort | head -n1)
 
@@ -29,10 +29,10 @@ jobs:
             tag="0.0.0"
           fi
 
-          echo Old Version: $tag
-          echo "name=old-version::$tag" >> $GITHUB_OUTPUT
+          echo "Old Version: $tag"
+          echo "old-version=$tag" >> "$GITHUB_OUTPUT"
 
-      - uses: madhead/semver-utils@1.4.3
+      - uses: madhead/semver-utils@latest
         id: comparison
         with:
           version: ${{ steps.run.outputs.new-version }}
