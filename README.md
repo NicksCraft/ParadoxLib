@@ -1,12 +1,15 @@
 # ParadoxLib
- A library for Slimefun4 Addons that adds a lot of useful events, classes, and utilities.
- 
- Inspiration taken from [InfinityLib](https://github.com/Mooy1/InfinityLib) and [ExtraUtils](https://github.com/Slimefun-Addon-Community/ExtraUtils), mostly of the code is from the InfinityLib
- 
- [![Release](https://jitpack.io/v/MrNickCoder/ParadoxLib.svg?style=flat-square)](https://jitpack.io/#MrNickCoder/ParadoxLib)
- 
+
+A library for Slimefun4 Addons that adds a lot of useful events, classes, and utilities.
+
+Inspiration taken from [InfinityLib](https://github.com/Mooy1/InfinityLib) and [ExtraUtils](https://github.com/Slimefun-Addon-Community/ExtraUtils), mostly of the code is from the InfinityLib
+
+[![Release](https://jitpack.io/v/NicksCraft/ParadoxLib.svg?style=flat-square)](https://jitpack.io/#NicksCraft/ParadoxLib)
+
 # Packages & Features
+
 ## Core
+
 <b>ParadoxAddon</b>: An implementation of JavaPlugin
 which you will need to extend for many of the other features to work.
 It provides multiple utility methods and does some basic setup for you.
@@ -17,6 +20,7 @@ and provides utility methods such as getting a value from within a range
 and removing unused/old keys from the user's config.
 
 ## Events
+
 <b>ArmorEquipEvent</b>: Gets called when a player equipping/unequipping armor piece
 
 <b>PlayerBreakOreEvent</b>: Gets called when a player break a ore
@@ -28,6 +32,7 @@ and removing unused/old keys from the user's config.
 <b>PlayerStrippedLogEvent</b>: Gets called when a player stripped a log/wood
 
 ## Common
+
 <b>Cooldowns</b>: A utility object for keeping track of cool downs of players/uuids
 
 <b>PersistentType</b>: Contains some PersistentDataTypes for
@@ -39,14 +44,17 @@ Also provides a constructor for PersistentDataType that uses lambda parameters.
 <b>Scheduler</b>: Contains static utility methods for running and repeating tasks
 
 ## Commands
+
 <b>AddonCommand</b>: allows you to add commands easily with a parent-child structure,
 so you could have a command with a sub command which has a sub command.
 It also adds some default commands such as an addon info, aliases, and help command.
 
 ## Enchants
+
 <b>GlowEnchant</b>: A custom enchantment called GlowEnchant(From ExtraUtils)
 
 ## Machines
+
 <b>ParadoxInventoryBlock</b>: A SlimefunItem with a menu, providing overridable methods for setting up the menu
 
 <b>ParadoxTickingBlock</b>: A ParadoxInventoryBlock with slimefun ticker
@@ -56,9 +64,11 @@ It also adds some default commands such as an addon info, aliases, and help comm
 <b>ParadoxGeneratorBlock</b>: A ParadoxTickingBlock which implements EnergyNetComponent and provides a generate method
 
 ## Utils
+
 <b>SkullTexture</b>: A class to get a custom skull texture even if its not in textures.minecraft.com
 
 ## Future Additions
+
 <b>Translation Utility</b>: Some sort of easy way to create translatable strings for your addon's and paradoxlibs's strings
 
 # How to use
@@ -67,7 +77,7 @@ First you need to add ParadoxLib to the `dependencies` section in your `pom.xml`
 
 ```xml
 <dependency>
-    <groupId>com.github.MrNickCoder</groupId>
+    <groupId>com.github.NicksCraft</groupId>
     <artifactId>ParadoxLib</artifactId>
     <version>SPECIFY VERSION HERE</version>
     <scope>compile</scope>
