@@ -5,12 +5,12 @@ on:
     branches:
       - master
     paths:
-      - 'src/**'
-      - 'pom.xml'
+      - "src/**"
+      - "pom.xml"
 
 jobs:
   check:
-    if: github.repository_owner == 'MrNickCoder'
+    if: github.repository_owner == 'NicksCraft'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.4

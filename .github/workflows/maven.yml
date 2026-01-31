@@ -5,12 +5,12 @@ on:
     branches-ignore:
       - master
     paths:
-      - 'src/**'
-      - 'pom.xml'
+      - "src/**"
+      - "pom.xml"
   pull_request:
     paths:
-      - 'src/**'
-      - 'pom.xml'
+      - "src/**"
+      - "pom.xml"
 
 jobs:
   build:
@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-java@v2.3.0
         with:
           distribution: adopt
-          java-version: '17'
-          cache: 'maven'
+          java-version: "17"
+          cache: "maven"
 
       - run: mvn package --file pom.xml
